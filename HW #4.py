@@ -1,25 +1,8 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import numpy as np
-
-
-# In[5]:
-
 
 numbers = np.array([[1,2,3,4], [5,6,7,8], [9,10,11,12]])
 
-
-# In[3]:
-
-
 print(numbers)
-
-
-# In[23]:
 
 
 xint= np.arange(1, 7)
@@ -28,20 +11,12 @@ print(xint)
 print(yint)
 
 
-# In[24]:
-
-
 import matplotlib
 print(matplotlib.__version__)
 
 
-# In[25]:
-
-
 import matplotlib.pyplot as plt
 
-
-# In[26]:
 
 
 import matplotlib.pyplot as plt
@@ -49,9 +24,6 @@ import numpy as np
 
 plt.plot(xint, yint)
 plt.show()
-
-
-# In[31]:
 
 
 import matplotlib.pyplot as plt
@@ -69,9 +41,6 @@ plt.xlabel("X Label")
 plt.ylabel("Y Label")
 
 plt.show()
-
-
-# In[66]:
 
 
 import matplotlib.pyplot as plt
@@ -117,10 +86,5 @@ plt.ylabel("Mathematical Function")
 font1 = {'family': 'serif', 'color': 'red', 'size': 20}
 plt.suptitle("SUBPLOTS", fontdict = font1)
 plt.show()
-
-
-# In[ ]:
-
-
 
 
