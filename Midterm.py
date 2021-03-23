@@ -181,6 +181,7 @@ plt.xlabel("Day")
 plt.ylabel("# of Episodes")
 office_by_day.plot(kind='bar', figsize=(20,10), title = 'Office Episodes Watched by Day', color = "blue")
 
+#Plot 2: Star Trek
 plt.subplot(1, 2, 2)
 plt.xlabel("Day")
 plt.ylabel("# of Episodes")
