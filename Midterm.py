@@ -1,22 +1,11 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[6]:
-
 
 list = [2,4,6,8,4,5,2,1,9,0,4,6,7,4,3,2,1,9,10,3,7,9,6,0,1,3,5,6,7,8,9,10,2,3,6,8,9,10,6,7,4,3]
-
-
-# In[13]:
 
 
 freq = {}
 for i in list:
     freq[i] = list.count(i)
 print(freq)
-
-
-# In[16]:
 
 
 import matplotlib
@@ -33,9 +22,6 @@ plt.bar(x,y, color = "green", width = 0.5)
 plt.show
 
 
-# In[39]:
-
-
 import json
 
 with open("./freq.json", "w") as out:
@@ -45,7 +31,7 @@ f = open("freq.json", "r")
 f.read()
 
 
-# In[72]:
+
 
 
 import pandas as pd
@@ -55,14 +41,12 @@ df = pd.read_csv('MidtermDS.csv')
 df.shape
 
 
-# In[73]:
 
 
 #See first 5 rows
 df.head()
 
 
-# In[74]:
 
 
 #Drop unnecessary columns
@@ -73,14 +57,11 @@ df = df.drop(['Profile Name', 'Attributes', 'Supplemental Video Type', 'Device T
 df.dtypes
 
 
-# In[75]:
-
 
 #Check new data
 df.head(1)
 
 
-# In[76]:
 
 
 #Convert Data Types
@@ -88,14 +69,10 @@ df['Start Time'] = pd.to_datetime(df['Start Time'], utc = True)
 df.dtypes
 
 
-# In[77]:
-
 
 #Change Start Time column  to dataframe index
 df = df.set_index('Start Time')
 
-
-# In[79]:
 
 
 #Convert from UTC to EST
@@ -106,14 +83,10 @@ df = df.reset_index()
 df.head(1)
 
 
-# In[80]:
 
 
 df['Duration'] = pd.to_timedelta(df['Duration'])
 df.dtypes
-
-
-# In[81]:
 
 
 #Analyzing the data, we see that The Office and Star Trek 
@@ -125,26 +98,21 @@ office = df[df['Title'].str.contains('The Office (U.S.)', regex=False)]
 startrek = df[df['Title'].str.contains('Star Trek: Deep Space Nine', regex=False)]
 
 
-# In[82]:
-
 
 #Analyzing the Start Time, we see all data comes from one month
 df.shape
 
 
-# In[83]:
 
 
 df.loc[0]
 
 
-# In[84]:
 
 
 df.loc[199]
 
 
-# In[97]:
 
 
 #To compare amount of time spent on The Office vs. Star Trek, convert timedelta
@@ -152,15 +120,12 @@ office_days_dur = office['Duration'].sum()
 print(office_days_dur)
 
 
-# In[99]:
-
 
 #Convert to hours
 office_hours = 24 + 15
 print(office_hours)
 
 
-# In[101]:
 
 
 #Same for Star Trek
@@ -170,9 +135,6 @@ print(st_days_dur)
 #Convert to hours
 st_hours = 20 + (2/60)
 print(st_hours)
-
-
-# In[102]:
 
 
 #Graphical Comparison of total time spent watching:
@@ -193,17 +155,12 @@ plt.pie(c, labels = mylabels)
 plt.show()
 
 
-# In[111]:
-
 
 #Graphical Comparison of Days of the Week Spent Watching
 
 #Divide data further
 office['weekday'] = office['Start Time'].dt.weekday
 startrek['weekday'] = startrek['Start Time'].dt.weekday
-
-
-# In[123]:
 
 
 #Set order so days from Mon-Sun
@@ -231,9 +188,6 @@ st_by_day.plot(kind = 'bar', figsize = (20, 10), title = 'Star Trek Episodes Wat
 
 plt.suptitle("Comparing Shows by Day Watched")
 plt.show()
-
-
-# In[ ]:
 
 
 
