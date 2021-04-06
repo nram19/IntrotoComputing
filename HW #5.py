@@ -1,9 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
+#Question 1
 class Clock():
     def __init__(self, time):
         self.time = time
@@ -15,9 +10,7 @@ clock = Clock(' 5:30')
 clock.print_time()
 
 
-# In[2]:
-
-
+#Question 2
 class Clock():
     def __init__(self, time):
         self.time = time
@@ -28,9 +21,7 @@ clock = Clock('5:30')
 clock.print_time(' 10:30')
 
 
-# In[3]:
-
-
+#Question 3
 class Clock():
     def __init__(self, time):
         self.time = time
@@ -46,9 +37,7 @@ paris_clock = Clock1(' 10:30')
 boston_clock.print_time()
 paris_clock.print_time()
 
-
-# In[66]:
-
+#Question 4
 
 #Create Queue class
 class Queue():
@@ -67,16 +56,12 @@ class Queue():
         try:
             return self.element.pop(0)
         except:
-            print("Queue is empty now.")
-            
-        
+            print("Queue is empty now.")            
+     
 #Create object
 queue = Queue()
 #Print initial queue
 queue.print()
-
-
-# In[67]:
 
 
 #Insert 1 element
@@ -84,21 +69,12 @@ queue.insert(4)
 queue.print()
 
 
-# In[68]:
-
-
 #Remove 1st element and return it/return message if empty
 queue.remove()
 
 
-# In[69]:
-
-
 #Test exception message
 queue.remove()
-
-
-# In[70]:
 
 
 #Test FIFO by adding more elements
@@ -110,22 +86,8 @@ queue.insert(16)
 queue.print()
 
 
-# In[71]:
-
-
-queue.remove()
-
-
-# In[73]:
-
-
 queue.remove()
 queue.remove()
 queue.remove()
-
-
-# In[ ]:
-
-
-
+queue.remove()
 
